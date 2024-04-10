@@ -3,8 +3,8 @@ version: 0.2
 env:
   variables:
      AWS_DEFAULT_REGION: "us-east-1"
-     IMAGE_REPO_NAME: "nishad-assignment3-1210"
-     AWS_ACCOUNT_ID: "975050240431"
+     IMAGE_REPO_NAME: "dahiya-assignment-3"
+     AWS_ACCOUNT_ID: "975050185589"
 
 phases:
   #install:
@@ -15,7 +15,7 @@ phases:
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 975050240431.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 975050185589.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
