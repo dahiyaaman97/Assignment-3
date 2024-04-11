@@ -4,8 +4,12 @@ FROM circleci/python
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+#Copy installation direction file and perform packages installation
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+ 
+#Copy application to working directoy
+COPY *.py ./
 
 # Install any needed dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
