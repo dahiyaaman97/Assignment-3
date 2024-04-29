@@ -1,2 +1,2 @@
-# Assignment-3
-Repository for Cloud Infrastructure Assignment 3
+# Devops Project
+Repository for Cloud Devops project
